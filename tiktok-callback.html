@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer"><title>Connecting TikTok</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<h1>Connecting TikTok…</h1>
+<p class="muted">Sending you back to the app on your computer. If nothing happens, make sure the app is running, then <a id="go" href="#">continue</a>.</p>
+<script>
+// TikTok only accepts https return addresses, so it returns here; this page passes the sign-in result
+// straight on to the app running on this computer. Nothing is stored or sent anywhere else.
+var target = "http://localhost:8765/oauth/tiktok/callback" + location.search;
+document.getElementById("go").href = target;
+location.replace(target);
+</script>
+</main></body></html>
